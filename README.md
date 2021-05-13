@@ -60,9 +60,13 @@ module.exports = {
 
 ## Release Notes
 
-### 1.0.0
+### 0.0.1
 
 Initial release of Featmoic
+
+### 0.0.2
+
+Fix vsix package bug
 
 ### For more information
 

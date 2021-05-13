@@ -1,4 +1,4 @@
-import { WorkspaceFolder, workspace, FileSystemWatcher} from  'vscode';
+import { WorkspaceFolder, workspace, FileSystemWatcher } from  'vscode';
 import { EventEmitter } from 'events';
 import * as path from  'path';
 import * as fs from  'fs';
@@ -60,6 +60,10 @@ export default class Hub extends EventEmitter {
         throw new Error(`config path ${exactPath} doesn't exists,please check!`);
     }
 
+    /**
+     * 获取参数
+     * @returns
+     */
     public async getConfig(){
         if (!fs.statSync(this.rootPath)) {
             return null;
@@ -75,6 +79,13 @@ export default class Hub extends EventEmitter {
         return palettes;
     }
 
+
+    /**
+     * 管道运行
+     * @param key
+     * @param config
+     * @returns
+     */
     async pipe(key:keyof IConfig,config:IConfig){
         const handler = parserMap.get(key);
         const pathArray = config[key]?.map((item)=>{
@@ -84,6 +95,11 @@ export default class Hub extends EventEmitter {
         return palettes;
     }
 
+    /**
+     * 解析参数
+     * @param config
+     * @returns
+     */
     async parseConfig(config:IConfig){
 
         const provider:any= {};

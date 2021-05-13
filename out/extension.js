@@ -36,7 +36,6 @@ function activate(context) {
             "'",
             "''",
             '`',
-            '',
             ' '
         ];
         if (classNames) {

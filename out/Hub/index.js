@@ -56,6 +56,10 @@ class Hub extends events_1.EventEmitter {
         }
         throw new Error(`config path ${exactPath} doesn't exists,please check!`);
     }
+    /**
+     * 获取参数
+     * @returns
+     */
     getConfig() {
         return __awaiter(this, void 0, void 0, function* () {
             if (!fs.statSync(this.rootPath)) {
@@ -73,6 +77,12 @@ class Hub extends events_1.EventEmitter {
             return palettes;
         });
     }
+    /**
+     * 管道运行
+     * @param key
+     * @param config
+     * @returns
+     */
     pipe(key, config) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
@@ -84,6 +94,11 @@ class Hub extends events_1.EventEmitter {
             return palettes;
         });
     }
+    /**
+     * 解析参数
+     * @param config
+     * @returns
+     */
     parseConfig(config) {
         return __awaiter(this, void 0, void 0, function* () {
             const provider = {};
